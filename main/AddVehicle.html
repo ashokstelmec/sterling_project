@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <link href="../assets/style.css" rel="stylesheet" />
+    <style>
+        .inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            max-height: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .logo-normal img {
+        width: 60%;
+    height: 60%;
+}
+
+        #filedata {
+            width: 242px;
+        }
+
+        .popup__text {
+            padding-left: 23%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="popup__text">
+            <form name="form1" id="data" method="post" enctype="multipart/form-data">
+
+                <div class="vehicle-box">
+
+                    <label> Owner:</label>
+                    <div>
+                        <input id="VehicleOwner" name="VehicleOwner" type="text" />
+                    </div>
+                    <br />
+                    <label> Number:</label>
+                    <div>
+                        <input id="VehiclNumber" name="VehiclNumber" type="text" />
+                    </div>
+                    <br />
+                    <label> Type:</label>
+                    <div>
+                        <input id="Type" name="Type" type="text" />
+                    </div>
+                    <br />
+                    <label> File:</label>
+                    <div>
+                        <input id="filedata" name="File" type="file" />
+                    </div>
+
+                    <div class="add-vehicle-btn">
+                        <br />
+                        <button id="btn" value="open" onclick="submit()"> Add Vechile</button>
+                        <br />
+                        <label id="Msg"> </label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+    $("form#data").submit(function (e) {
+        debugger;
+        $("#Msg").text('');
+        var VehicleOwner = $("#VehicleOwner").val().trim();
+        var VehiclNumber = $("#VehiclNumber").val().trim();
+        var type = $("#Type").val().trim();
+        if (VehicleOwner.length > 0 && VehiclNumber.length > 0 && type.length > 0 && File.length > 0) {
+            var formData = new FormData(this);
+            $.ajax({
+                url: 'https://49.205.196.123:8083/api/Employee/AddVechile',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                cache: false,
+                contentType: false,
+                /* headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },*/
+                success: function (data) {
+                    alert('Vechile Insert SuccessFully!');
+                    $("#VhechileOwner").val('');
+                    $("#VhechileNumber").val('');
+                    $("#Type").val('');
+                    location.reload();
+                },
+                error: function (err) {
+                    console.log(err);
+                }              
+            });
+
+        }
+        else {
+            alert('Please enter all fields');
+        }
+    });
+</script>
+</html>

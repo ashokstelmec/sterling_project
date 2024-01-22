@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/SterlingWilson-logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Sterling & Wilson Pvt Ltd
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            margin-left: 40%;
+            
+        }
+
+        .logo-normal img {
+            width: 50% !important;
+            height: 40% !important;
+        }
+
+        .loadergrid {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 60px;
+            height: 60px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            margin-left: 20%;
+            z-index: 9999;
+            margin-top: -3%;
+            display: none;
+            position: absolute;
+            left: 28%;
+            top: 23px;
+        }
+
+        .sidebar .nav p {
+            margin: 0;
+            line-height: 30px;
+            font-size: 13px;
+            position: relative;
+            display: block;
+            height: auto;
+            white-space: nowrap;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        body {
+            background-image: linear-gradient(180deg, #ffffff, #f2f4ff);
+        }
+        
+
+        .sidebar .nav li a,
+        .sidebar .nav li .dropdown-menu a {
+         
+            border-radius: 3px;
+            color: #ffffff;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-transform: capitalize;
+            font-size: 15px;
+            padding: 5px 5px;
+        }
+
+        .sidebar .nav i {
+            font-size: 24px;
+            float: left;
+            margin-right: 15px;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+       
+        .sidebar .logo .simple-text {
+            text-transform: uppercase;
+            padding: 5px 0px;
+            display: inline-block;
+            font-size: 18px;
+            color: #ffffff;
+            white-space: nowrap;
+            font-weight: 400;
+            line-height: 30px;
+            overflow: hidden;
+            text-align: center;
+            display: block;
+            
+        }
+
+        .sidebar .nav i {
+            font-size: 19px;
+            float: left;
+            margin-right: 15px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            text-align: center;
+            border-radius: 4px;
+            color: #101840;
+        }
+
+        .sidebar .nav li:hover>a,
+        .sidebar .nav li .dropdown-menu a:hover,
+        .sidebar .nav li .dropdown-menu a:focus,
+        .sidebar .nav li.active>[data-toggle="collapse"] {
+            background-color: rgba(200, 200, 200, 0.2);
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+
+        .dropdown-item {
+            font-size: 13px !important;
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus,
+        .dropdown-menu a:active {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+
+        .table_card {
+            background: #fff;
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.07);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px !important;
+        }
+
+        #tab_customers tr td img {
+            width: 40px;
+            border-radius: 50% !important;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #11142d;
+        }
+
+        .table th {
+            font-size: 12px !important;
+        }
+
+        .table tr td {
+            font-size: 14px;
+        }
+
+        .download_button {
+            background-image: linear-gradient(67deg, #4CAF50, #90ba0c);
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            padding: 12px 0px;
+            border-radius: 4px;
+            position: relative;
+
+        }
+
+        .main-panel>.footer {
+            border-top: 1px solid #e7e7e7;
+            background: #fff !important;
+        }
+
+        .btnright {
+            float: right;
+            background-image: linear-gradient(67deg, #4CAF50, #90BA0C);
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .menudiv1 {
+            width: 80%;
+            display: inline-block;
+        }
+
+        .menudiv2 {
+            width: 20%;
+            display: inline;
+        }
+        img {
+    
+          width: 110px;
+          height: 30px;
+        }
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+          vertical-align: middle !important;
+        }
+        .highlighted {
+            background: linear-gradient(67deg, #3db567, #90BA0C); 
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".nav-item a").click(function () {
+                $(".nav-item").removeClass("highlighted");
+    
+                $(this).parent().addClass("highlighted");
+            });
+        });
+    </script>
+</head>
+
+<body class="">
+    
+    <style>
+           .nav-link:hover {
+                background: linear-gradient(67deg, #3db567, #90BA0C );
+                border-radius: 4px;
+            }
+          .nav-item .nav-link i.in-icon::before {
+            content: "";
+            display: inline-block;
+            width: 27px; 
+            height: 25px;
+            background-image: url('../assets/media/instrurction.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 3px;
+            margin-left: 1px;
+            margin-top: 2px;
+            }
+     .nav-item .nav-link i.graph-icon::before {
+            content: "";
+            display: inline-block;
+            width: 28px; 
+            height: 35px; 
+            background-image: url('../assets/media/graph.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+            margin-top: -2px;
+        } 
+     .nav-item .nav-link i.speed-icon::before {
+            content: "";
+            display: inline-block;
+            width: 28px; 
+            height: 35px; 
+            background-image: url('../assets/media/speed.jpg'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+            margin-top: -2px;
+        } 
+            .nav-item .nav-link i.fire-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/fire.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        } .nav-item .nav-link i.a-icon::before {
+            content: "";
+            display: inline-block;
+            width: 29px; 
+            height: 28px;
+            background-image: url('../assets/media/animal.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+           
+        }
+        .nav-item .nav-link i.log-icon::before {
+            content: "";
+            display: inline-block;
+            width: 25px; 
+            height: 20px;
+            background-image: url('../assets/media/log.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+           
+        }
+        .nav-item .nav-link i.c-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/crowd.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+        .nav-item .nav-link i.v-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/v.jpg'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+        .nav-item .nav-link i.h-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/h.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+         .nav-item .nav-link i.map-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/map.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+         .nav-item .nav-link i.entry-icon::before {
+            content: "";
+            display: inline-block;
+            width: 30px; 
+            height: 28px; 
+            background-image: url('../assets/media/entry.png');
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+        .nav-item .nav-link i.Face-icon::before {
+            content: "";
+            display: inline-block;
+            width: 29px; 
+            height: 27px;
+            background-image: url('../assets/media/facerecognew.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+            margin-top: 1px;
+        }
+    
+        .nav-item .nav-link i.anpr-icon::before {
+            content: "";
+            display: inline-block;
+            width: 29px; 
+            height: 27px; 
+            background-image: url('../assets/media/Anpr.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            margin-right: 8px; 
+        }
+    </style>
+    
+    
+    <div class="wrapper ">
+        <div id="myModal" class="modal">
+            <span class="close">X</span>
+            <img class="modal-content" id="img01">
+        </div>
+         <div class="sidebar" data-color="purple" data-background-color="white" style="background: #000;">
+          
+            <div class="logo">
+                <a  id="dynamicLink"  class="simple-text logo-normal">
+                    <img src="../assets/img/STERLing & WILson.png" style="min-width: 80%;">
+                </a>  
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons Face-icon"></i>
+                            <p>Face Recognition Solution</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./newANPR.html">
+                            <i class="material-icons anpr-icon"></i>
+                            <p>ANPR Solution</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link highlighted"
+                           href="./newVehicleDetail.html">
+                            <i class="material-icons entry-icon"></i>
+                            <p>
+                                Vehicle Entry-Exit Analysis
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link"
+                           href="./mapping.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons map-icon"></i>
+                            <p>Vehicle Mapping</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newFire.html">
+                            <i class="material-icons fire-icon"></i>
+                            <p>Fire & Smoke</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newDection.html">
+                            <i class="material-icons in-icon"></i>
+                            <p>Intrusion Detection</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newfall.html">
+                            <i class="material-icons h-icon"></i>
+                            <p>Human Fall</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newovergrass.html">
+                            <i class="material-icons v-icon"></i>
+                            <p>Vegetation Detection</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newCrowd.html">
+                            <i class="material-icons c-icon"></i>
+                            <p>Crowd Detection</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newAnimal.html">
+                            <i class="material-icons a-icon"></i>
+                            <p>Animal & Human Detection</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newOverSpeed.html">
+                            <i class="material-icons speed-icon"></i>
+                            <p> Vehicle Over Speed</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="./newEscalation_Matrix.html">
+                            <i class="material-icons graph-icon"></i>
+                            <p>Escalation Matrix</p>
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item " style="display: none;">
+                        <a class="nav-link"style="display: none;"
+                           href="./notifications.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">notifications</i>
+                            <p style="display: none;">Vehicle Classifications</p>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item" style="display: none;">
+                        <a class="nav-link" style="display: none;"
+                           href="./Cleaning.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p style="display: none;">Module Cleaning</p>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item" style="display: none;">
+                        <a class="nav-link"style="display: none;"
+                           href="./moduleDefect.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk">
+                            <i class="material-icons">dashboard</i>
+                            <p style="display: none;">Defect Analytics</p>
+                        </a>
+                    </li>
+
+                </ul>
+                <script>
+                  
+                
+                    document.getElementById("logout-link").addEventListener("click", function(event) {
+                        var isConfirmed = confirm("Are you sure you want to log out?");
+                        
+                        if (isConfirmed) {
+                            window.location.href = "../main/Login.html";
+                        } else {
+                            event.preventDefault();
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+
+                    </div>
+
+                    <div class="collapse navbar-collapse justify-content-end">
+
+
+                    </div>
+                </div>
+            </nav>
+            <div class="">
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <div class="col-md-12 mt-5">
+                            <div class="table_card mb-0">
+
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper menudiv1">
+                                        <h4 class="card-title pl-0">Vehicle Details</h4>
+
+                                    </div>
+                                    <div class="menudiv2">
+            <button class="btnright " id="btn" value="open" onclick="popUp()">
+                <i class="fa fa-plus fa-1x" aria-hidden="true"></i> Add Vehicle</button>
+        </div>
+                                </div>
+
+
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                    <table class="table table-hover">
+                                        <tbody id="Anprtbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div id="loader" class="loader"></div>
+                                <div class="table-responsive" id="reportcontents" style="display:none">
+                                    <span style="text-align: center;font-size: 14px;left: 0; margin-left: 43%; font-weight: bold;">
+                                        (Sterling & Wilson Pvt Ltd)
+                                    </span>
+                                    <br />
+                                    <span style="text-align:left" id="startdate"></span>
+                                    <br />
+                                    <span style="text-align:left" id="enddate"></span>
+                                    <table id="tab_customers" class="table table-hover table-bordered table-striped"
+                                           style="border-collapse: collapse; width: 100%;" border="1">
+                                        <tbody id="reporttbody">
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="table-responsive" id="reportMonthlycontents" style="display:none">
+                                    <span style="text-align: center;font-size: 14px;left: 0; margin-left: 43%; font-weight: bold;">
+                                        (Sterling & Wilson Pvt Ltd )
+                                    </span>
+                                    <br />
+                                    <span style="text-align:left; font-size: 14px !important; color: #a51922; font-weight: bold;" id="monthname"></span>
+                                    <br />
+                                    <span style="text-align:left" id="startdate"></span>
+                                    <br />
+                                    <span style="text-align:left" id="enddate"></span>
+
+                                    <table id="tab_customers" class="table table-hover table-bordered table-striped"
+                                           style="border-collapse: collapse; width: 100%;" border="1">
+                                        <tbody id="ReportMonthlybody">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="table_card">
+                                <h4 class="card-title">Download Reports</h4>
+                                <div class="dropdown pt-3">
+                                    <button class="btn btn-secondary input_style dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        Vehicle Report
+                                    </button>
+                            
+                                </div>
+                                <div class="form-group bmd-form-group pt-3">
+                                    <div class="input-group date" id="datetimepicker1">
+                                        <input type="text" name="datetimepicker1" class="form-control">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group bmd-form-group">
+                                    <div class="input-group date" id="datetimepicker2">
+                                        <input type="text" name="datetimepicker2" class="form-control">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div id="cmd" class="download_button">
+                                    <lable> Download Report</lable> <i id="cmd" class="fa fa-file-text fa-1x"
+                                                                       aria-hidden="true"></i>
+                                    <div id="loadergrid" class="loadergrid"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav class="float-left">
+                            <ul>
+                            </ul>
+                        </nav>
+                        <div class="copyright float-right">
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>, powered by
+                            <a href="https://cairovisions.com/" target="_blank">Cairovisions </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!--   Core JS Files   -->
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!-- Plugin for the momentJs  -->
+        <script src="../assets/js/plugins/moment.min.js"></script>
+        <!--  Plugin for Sweet Alert -->
+        <script src="../assets/js/plugins/sweetalert2.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+        <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+        <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+        <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+        <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+        <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+        <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+        <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+        <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+        <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+        <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+        <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+        <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../assets/js/plugins/nouislider.min.js"></script>
+        <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="../assets/js/plugins/arrive.min.js"></script>
+
+        <!-- Chartist JS -->
+        <script src="../assets/js/plugins/chartist.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <script src="../assets/demo/demo.js"></script>
+        <link rel="stylesheet" href="../assets/style.css">
+
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+            rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+            rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+        <script>
+
+             if (sessionStorage.getItem('AuthenticationState') === null) {
+            window.open("AccessDenied.html", "_self");
+              }
+           //Is their authentication token still valid?
+            else if (Date.now > new Date(sessionStorage.getItem('AuthenticationExpires'))) {
+             window.open("AccessDenied.html", "_self");
+            }
+            else {
+
+            $('.dropdown-menu a').on('click', function () {
+                $('#dropdownMenuButton').html($(this).html());
+            })
+            var date = new Date();
+            var startdatePicker = moment(date).format('DD/MM/YYYY');
+            var enddatePicker = moment(date).format('DD/MM/YYYY');
+
+             $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    format: 'DD/MM/YYYY',
+                    defaultDate: new Date()
+                }).on('dp.change', function (event) {
+                    enddatePicker = event.date.format('DD/MM/YYYY');
+                });
+            });
+
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    format: 'DD/MM/YYYY', 
+                    defaultDate: new Date()
+                }).on('dp.change', function (event) {
+                    startdatePicker = event.date.format('DD/MM/YYYY');
+                });
+            });
+
+            function getReport(filtrtype, fromdate, enddate) {
+                $("#loadergrid").css('display', 'block');
+                $('#startdate').text('From : ' + fromdate);
+                $('#enddate').text('To : ' + enddate);
+                
+                var URL = 'https://ai-api.sterlingandwilson.com/api/Employee/GetAnprVechileDetaildata_Report?startdate=' + fromdate + '&enddate=' + enddate;
+
+                $.ajax({
+                    type: "GET",
+                    url: URL,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (Data) {
+                        var tbodyreport = document.getElementById('reporttbody');
+                        var tr = "<tr><th>S.NO</th><th >Photo</th><th >Owner</th><th >LP Number</th><th >Time In</th><th >Time Out</th><th >Duration</th><th >Date</th><th >Vehicle Type</th></tr>";
+                        tbodyreport.innerHTML = tr;
+                        for (var i = 0; i < Data.length; i++) {
+                            let increment = i + 1;
+                            var tr = "<tr>";
+                            tr += "<td >" + increment + "</td>" + "<td class=\"imgtd\"><img src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].empName + "</td>" + "<td >" + Data[i].cameraName + "</td>" + "<td >" + Data[i].timeIn + "</td>" + "<td >" + Data[i].timeOut + "</td>" + "<td >" + Data[i].duration + "</td>" + "<td >" + Data[i].recDateTime.substring(0, 10) + "</td>" + "<td >" + Data[i].empType + "</td></tr>"
+                            tbodyreport.innerHTML += tr;
+                        }
+                        $("#loadergrid").css('display', 'none');
+                        printPdf();
+                    },
+                    "error": function (data) {
+                        alert("Some Error Occured!");
+                    }
+                });
+            }
+            $(document).ready(function () {
+
+                let searchParams = new URLSearchParams(window.location.search)
+                if (searchParams.get('ackrwiejhynvhfro82wue') !== 'qoiwuehrncmjdkjkdlfjksdjfkskdjfk') {
+                }
+
+                $().ready(function () {
+                    $sidebar = $('.sidebar');
+
+                    $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+                    $full_page = $('.full-page');
+
+                    $sidebar_responsive = $('body > .navbar-collapse');
+
+                    window_width = $(window).width();
+
+                    fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+                    if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                        if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                            $('.fixed-plugin .dropdown').addClass('open');
+                        }
+
+                    }
+
+                    $('.fixed-plugin a').click(function (event) {
+                        if ($(this).hasClass('switch-trigger')) {
+                            if (event.stopPropagation) {
+                                event.stopPropagation();
+                            } else if (window.event) {
+                                window.event.cancelBubble = true;
+                            }
+                        }
+                    });
+
+                    $('.fixed-plugin .active-color span').click(function () {
+                        $full_page_background = $('.full-page-background');
+
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
+
+                        var new_color = $(this).data('color');
+
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data-color', new_color);
+                        }
+
+                        if ($full_page.length != 0) {
+                            $full_page.attr('filter-color', new_color);
+                        }
+
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.attr('data-color', new_color);
+                        }
+                    });
+
+                    $('.fixed-plugin .background-color .badge').click(function () {
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
+
+                        var new_color = $(this).data('background-color');
+
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data-background-color', new_color);
+                        }
+                    });
+
+                    $('.fixed-plugin .img-holder').click(function () {
+                        $full_page_background = $('.full-page-background');
+
+                        $(this).parent('li').siblings().removeClass('active');
+                        $(this).parent('li').addClass('active');
+
+
+                        var new_image = $(this).find("img").attr('src');
+
+                        if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                            $sidebar_img_container.fadeOut('fast', function () {
+                                $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                                $sidebar_img_container.fadeIn('fast');
+                            });
+                        }
+
+                        if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                            $full_page_background.fadeOut('fast', function () {
+                                $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                                $full_page_background.fadeIn('fast');
+                            });
+                        }
+
+                        if ($('.switch-sidebar-image input:checked').length == 0) {
+                            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        }
+
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                        }
+                    });
+
+                    $('.switch-sidebar-image input').change(function () {
+                        $full_page_background = $('.full-page-background');
+
+                        $input = $(this);
+
+                        if ($input.is(':checked')) {
+                            if ($sidebar_img_container.length != 0) {
+                                $sidebar_img_container.fadeIn('fast');
+                                $sidebar.attr('data-image', '#');
+                            }
+
+                            if ($full_page_background.length != 0) {
+                                $full_page_background.fadeIn('fast');
+                                $full_page.attr('data-image', '#');
+                            }
+
+                            background_image = true;
+                        } else {
+                            if ($sidebar_img_container.length != 0) {
+                                $sidebar.removeAttr('data-image');
+                                $sidebar_img_container.fadeOut('fast');
+                            }
+
+                            if ($full_page_background.length != 0) {
+                                $full_page.removeAttr('data-image', '#');
+                                $full_page_background.fadeOut('fast');
+                            }
+
+                            background_image = false;
+                        }
+                    });
+
+                    $('.switch-sidebar-mini input').change(function () {
+                        $body = $('body');
+
+                        $input = $(this);
+
+                        var simulateWindowResize = setInterval(function () {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 180);
+
+                        setTimeout(function () {
+                            clearInterval(simulateWindowResize);
+                        }, 1000);
+
+                    });
+                });
+                GetAnprData();
+            });
+        }
+        </script>
+
+        <script>
+            function GetAnprData() {
+                var URL = 'https://ai-api.sterlingandwilson.com/api/Employee/GetAnprVechileDetaildata';
+                $.ajax({
+                    type: "GET",
+                    url: URL,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (Data) {
+                        var tbody = document.getElementById('Anprtbody');
+                        var tr = "<td>S.NO</td><td >Photo</td><td >Owner</td><td >LP Number</td><td >Time In</td><td >Time Out</td><td >Duration</td><td >Date</td><td >Vehicle Type</td></tr>";
+                        tbody.innerHTML = tr;
+                        for (var i = 0; i < Data.length; i++) {
+                            let increment = i + 1;
+                            var tr = "<tr>";
+                            tr += "<td >" + increment + "</td>" + "<td ><img src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].empName + "</td>" + "<td >" + Data[i].cameraName + "</td>" + "<td >" + Data[i].timeIn + "</td>" + "<td >" + Data[i].timeOut + "</td>" + "<td >" + Data[i].duration + "</td>" + "<td >" + Data[i].recDateTime.substring(0, 10) + "</td>" + "<td >" + Data[i].empType + "</td></tr>"
+                            tbody.innerHTML += tr;
+                        }
+                        $("#loader").css('display', 'none');
+                    },
+                    "error": function (data) {
+                        alert("Some Error Occured!");
+                    }
+                });
+
+            }
+
+            function printPdf() {
+                var mywindow = window.open('', 'my div', 'height=400,width=600');
+                if ($('#dropdownMenuButton').text().trim() === 'Vehicle Report Day Wise') {
+                    data = $('#reportMonthlycontents')[0];
+                }
+                else {
+                    var data = $('#reportcontents')[0];
+                }
+                
+                var additioncss = '<style>table tr td img {height: 25px; padding:4px 5px;}  table tr td{text-align:center; font-size:12px;} table tr th{text-align:center; font-weight:bold; font-size:13px;} .imgtd{width:80px;}</style>';
+
+                mywindow.document.head.innerHTML = '<title>Vehicle Analytics-Vehicle Detail</title><link rel="stylesheet" href="css/main.css" type="text/css" />' + additioncss;
+                mywindow.document.body.innerHTML = '<body>' + data.innerHTML + '</body>';
+                mywindow.document.close();
+                mywindow.focus(); 
+                setTimeout(
+                    function () {
+                        mywindow.print();
+                        mywindow.close();
+                    }, 1000);
+                return true;
+
+            }
+
+            function getVehicleReportMonthlyPerDayWise(filtrtype, fromdate, enddate) {
+                
+                $("#loadergrid").css('display', 'block');
+                $('#startdate').text(fromdate);
+                $('#enddate').text(enddate);
+                var date = new Date();
+                var monthname = moment(date).format('MMMM');
+                var yearname = moment(date).format('YYYY');
+                $('#monthname').text(monthname + '-' + yearname);
+
+                 var URL = 'https://ai-api.sterlingandwilson.com/api/Employee/VehicleMonthlyReport_day_wise?startdate=' + fromdate + '&enddate=' + enddate;
+               
+
+                $.ajax({
+                    type: "GET",
+                    url: URL,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (Data) {
+                        var tbody = document.getElementById('ReportMonthlybody');
+                        var tr = "<tr><th>SN</th><th>LP No</th><th>LP Image</th><th>Type</th><th>Owner</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>Total Days</th><th>Ava. Days</th><th>Total Hours</th></tr>";
+
+                        tbody.innerHTML = tr;
+                        for (var i = 0; i < Data.length; i++) {
+                            let increment = i + 1;
+                            var tr = "<tr>";
+                            tr += "<td >" + increment + "</td>" + "<td >" + Data[i].userID + "</td>" + "<td class=\"imgtd\"><img src='data:image/png;base64," + Data[i].photo + "'></td>" + "<td >" + Data[i].type + "</td>" + "<td >" + Data[i].userName + "</td>"
+
+                                + "<td >" + Data[i].day1 + "</td>"
+                                + "<td >" + Data[i].day2 + "</td>"
+                                + "<td >" + Data[i].day3 + "</td>"
+                                + "<td >" + Data[i].day4 + "</td>"
+                                + "<td >" + Data[i].day5 + "</td>"
+                                + "<td >" + Data[i].day6 + "</td>"
+                                + "<td >" + Data[i].day7 + "</td>"
+                                + "<td >" + Data[i].day8 + "</td>"
+                                + "<td >" + Data[i].day9 + "</td>"
+                                + "<td >" + Data[i].day10 + "</td>"
+
+                                + "<td >" + Data[i].day11 + "</td>"
+                                + "<td >" + Data[i].day12 + "</td>"
+                                + "<td >" + Data[i].day13 + "</td>"
+                                + "<td >" + Data[i].day14 + "</td>"
+                                + "<td >" + Data[i].day15 + "</td>"
+                                + "<td >" + Data[i].day16 + "</td>"
+                                + "<td >" + Data[i].day17 + "</td>"
+                                + "<td >" + Data[i].day18 + "</td>"
+                                + "<td >" + Data[i].day19 + "</td>"
+                                + "<td >" + Data[i].day20 + "</td>"
+
+                                + "<td >" + Data[i].day21 + "</td>"
+                                + "<td >" + Data[i].day22 + "</td>"
+                                + "<td >" + Data[i].day23 + "</td>"
+                                + "<td >" + Data[i].day24 + "</td>"
+                                + "<td >" + Data[i].day25 + "</td>"
+                                + "<td >" + Data[i].day26 + "</td>"
+                                + "<td >" + Data[i].day27 + "</td>"
+                                + "<td >" + Data[i].day28 + "</td>"
+                                + "<td >" + Data[i].day29 + "</td>"
+                                + "<td >" + Data[i].day30 + "</td>"
+                                + "<td >" + Data[i].day31 + "</td>"
+
+                                + "<td >" + Data[i].workingdays + "</td>" + "<td >" + Data[i].presentdays + "</td>" + "<td >" + Data[i].totalHours + "</td></tr>"
+                            tbody.innerHTML += tr;
+                        }
+                        $("#loadergrid").css('display', 'none');
+                        printPdf();
+                    },
+                    "error": function (data) {
+                        alert("Some Error Occured!");
+                    }
+                });
+            }
+
+
+            $('#cmd').click(function () {
+                
+                if ($('#dropdownMenuButton').text().trim() === 'Vehicle Report Day Wise') {
+                    getVehicleReportMonthlyPerDayWise('', startdatePicker, enddatePicker);
+                } else {
+                    getReport($('#dropdownMenuButton').text().trim(), startdatePicker, enddatePicker);
+                }
+               
+
+            });
+        </script>
+        
+        <script>
+            function popUp() {
+                strOpen = "AddVehicle.html";
+                var win = window.open(strOpen, 'popWindow', 'toolbar=0,scrollbars=0,location=0,statusbar=1,menubar=0,resizable=1,width=500,height=500,left = 545,top = 200');
+                var timer = setInterval(function () {
+                    if (win.closed) {
+                        clearInterval(timer);
+                        GetAnprData();
+                    }
+                }, 500);
+            }
+
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+
+                $("#btnSubmit").click(function (event) {
+                    event.preventDefault();
+                    var form = $('#data')[0];
+
+                    var formData = new FormData(form);
+                    $("#Msg").text('');
+                    var vhechileOwner = $("#VhechileOwner").val().trim();
+                    var vhechileNumber = $("#VhechileNumber").val().trim();
+                    var type = $("#Type").val().trim();
+                    if (vhechileOwner.length > 0 && vhechileNumber.length > 0 && type.length > 0 && File.length > 0) {
+                        $.ajax({
+                            url: 'https://ai-api.sterlingandwilson.com/api/Employee/AddVechile',
+                            type: 'POST',
+                            data: formData,
+                            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                            success: function (data) {
+                                $("#Msg").text('Vechile Insert SuccessFully!');
+                                alert('Vechile Insert SuccessFully!');
+                                $("#VhechileOwner").val('');
+                                $("#VhechileNumber").val('');
+                                $("#Type").val('');
+                            },
+                            "error": function (data) {
+                                alert("Some Error Occured!");
+                            },
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        });
+                    }
+                    else {
+                        $("#Msg").text('Please enter all fields');
+                        alert('Please enter all fields');
+                    }
+                });
+
+            });
+
+        </script>
+
+
+        <div class="popup" id="popup">
+            <div class="popup-inner">
+
+                <div class="popup__text">
+                    <form name="form1" id="data" method="post" enctype="multipart/form-data">
+
+                        <div class="vehicle-box">
+
+                            <label> Owner:</label>
+                            <div>
+                                <input id="VhechileOwner" type="text" />
+                            </div>
+                            <br />
+                            <label> Number:</label>
+                            <div>
+                                <input id="VhechileNumber" type="text" />
+                            </div>
+                            <br />
+                            <label> Type:</label>
+                            <div>
+                                <input id="Type" type="text" />
+                            </div>
+                            <br />
+                            <label> File:</label>
+                            <div>
+                                <input id="filedata" name="File" type="file" />
+                            </div>
+
+                            <div class="add-vehicle-btn">
+                                <br />
+                                <input type="submit" value="Add Vechile" id="btnSubmit" />
+                                <br />
+                                <label id="Msg"> </label>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <a class="popup__close" href="#" onclick="popup__close()">X</a>
+            </div>
+        </div>
+        
+    <script>
+        var storedFullURL = sessionStorage.getItem("fullURL");
+
+        if (storedFullURL) {
+            var dynamicLink = document.getElementById("dynamicLink");
+            dynamicLink.href = storedFullURL;
+        }
+    </script>
+
+</body>
+</html>

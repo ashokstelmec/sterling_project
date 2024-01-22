@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/SterlingWilson-logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      Sterling & Wilson Pvt.Ltd
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+    <script src="../assets/js/core/jquery.min.js"></script>
+    
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    
+    
+
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway:700);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #342643; 
+    height: 100%;
+    padding: 10px;
+}
+
+a {
+  color: #EE4B5E !important;
+  text-decoration:none;
+}
+a:hover {
+  color: #FFFFFF !important;
+  text-decoration:none;
+}
+
+.text-wrapper {
+    height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.title {
+    font-size: 5em;
+    font-weight: 700;
+    color: #EE4B5E;
+}
+
+.subtitle {
+    font-size: 33px;
+    font-weight: 700;
+    color: #1FA9D6;
+}
+.isi {
+    font-size: 18px;
+    text-align: center;
+    margin:30px;
+    padding:20px;
+    color: white;
+}
+.buttons {
+    margin: 30px;
+        font-weight: 700;
+        border: 2px solid #EE4B5E;
+        text-decoration: none;
+        padding: 15px;
+        text-transform: uppercase;
+        color: #EE4B5E;
+        border-radius: 26px;
+        transition: all 0.2s ease-in-out;
+        display: inline-block;
+        font-size: 50px;
+       
+  }
+  .buttons:hover {
+            background-color: #EE4B5E;
+            color: white;
+            transition: all 0.2s ease-in-out;
+        }
+
+    
+   
+  
+
+  </style>
+
+
+</head>
+<body>
+
+     <div class="text-wrapper">
+        <div class="title" data-content="404">
+          ACCESS DENIED
+        </div>
+        <br>
+        <br>
+
+ 
+       <div class="subtitle">
+         Oops, You don't have permission to access this page.
+        </div>
+       <div class="isi">
+          
+          </div>
+ 
+        <div class="buttons">
+         <a class="button" href="https://cmsdev.sterlingandwilson.com/login/?ref=/Portfolio/Adv">Login</a>
+       </div>
+     </div>
+   
+
+
+      <script>
+
+        $('#btnlogin').click(function () { login() });
+
+        // Date.prototype.addHours = function(h) {    
+        // this.setTime(this.getTime() + (h*60*60*1000)); 
+        // return this;   
+        // }
+
+        function login() {
+            // debugger;
+
+            // $('#username').text('From : ' + username);
+            // $('#password').text('To : ' + password);
+             var username =   document.getElementById("username").value;
+             var password = document.getElementById("password").value;
+            var URL = 'http://localhost:50700/api/Employee/UserAuthenticat?UserName=' + username + '&Password=' + password;
+            $.ajax({
+                type: "GET",
+                url: URL,
+                contentType: "application/json",
+                dataType: "json",
+                headers: {"Authorization": localStorage.getItem('token')},
+                success: function (Data) {
+                    $("#total").text(Data.username);
+                    var UGrou = Data[0].userGroup;
+
+
+                    
+
+
+                    if (UGrou == 'Admin' ) {
+
+                      sessionStorage.setItem("AuthenticationState", "Authenticated");
+                
+                     //This authentication key will expire in 1 hour.
+                      //sessionStorage.setItem("AuthenticationExpires", Date.now(setTime(this.getTime() + (h*60*60*1000))));
+                      
+                      window.location = "file:///F:/Ajit%20kumar/Ayana/Bikaner%20Devlopment/newfile/main/new.html";
+                            
+                     // window.location = "http://ayanapower-001-site2.itempurl.com/main/dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk";
+                   }
+                   else if(UGrou=='Pavagada'){
+                    sessionStorage.setItem("AuthenticationState", "Authenticated");
+                
+                    //This authentication key will expire in 1 hour.
+                    sessionStorage.setItem("AuthenticationExpires", Date.now.addHours(1));
+
+                    window.location = "file:///F:/Ajit%20kumar/Ayana/Bikaner%20Devlopment/newfile/main/dashboard.html?ackrwiejhynvhfro82wue=qoiwuehrncmjdkjkdlfjksdjfkskdjfk";
+
+                   }
+                   else{
+                    sessionStorage.setItem("AuthenticationState", "Authenticated");
+                
+                    //This authentication key will expire in 1 hour.
+                    sessionStorage.setItem("AuthenticationExpires", Date.now.addHours(1));
+                    window.location = "https://49.205.196.123:8082/main/dashboard.html";
+
+
+                   }
+                   
+                },
+                "error": function (data) {
+                   
+                }
+
+                
+            });
+
+            
+
+        }
+        
+
+
+        
+      </script>
+</body>

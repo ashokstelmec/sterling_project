@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterling and Wilson Pvt. Ltd</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/81a03866de.js" crossorigin="anonymous"></script>
+
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="icon" type="image/png" sizes="114x114" href="../assets/img/SterlingWilson-logo.png" />
+
+
+     <!-- 2nd -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+ 
+ 
+     <!-- 3rd -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+     <!-- 4th Graph -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+ 
+     <!-- 5th Graph -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+ 
+     <!-- 6th Graph -->
+     <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-bundle.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.11.1/css/anychart-ui.min.css" />
+ 
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+
+
+        body{
+            background-color: #000 !important;
+            overflow: hidden;
+        }
+
+
+        .navbar-brand a{
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .navbar-toggler-icon{
+            color: red;
+        }
+
+        .navbar-brand a i{
+            color: #fff;
+        }
+
+        #kt_header{
+            margin-top: 3.1rem !important;
+            width: 102%;
+        }
+
+        #kt_header a{
+            text-decoration: none;
+            color: rgb(89, 89, 250);
+        }
+
+        .navbar-item{
+            padding: 1px 1rem !important;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap !important;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212529 !important;
+            transition: 0.2s;
+            background-color: #fff !important;
+            
+        }
+
+        .navbar-item span{
+            font-size: 13px;
+        }
+
+        .navbar-item:hover{
+            -ms-transform: scale(1.2); 
+            -webkit-transform: scale(1.2);
+            transform: scale(1.09); 
+        }
+
+        .navbar-item img{
+            max-width: 100%;
+            height: 50px;
+            display: block;
+        }
+
+        #kt_header strong, #kt_header span{
+            color: #00aba9 !important;
+            position: relative;
+            left: -1rem;
+        }
+
+        .crowd-vehicle strong, .crowd-vehicle span{
+            color: #00aba9 !important;
+            position: relative;
+            left: -2rem;
+        }
+
+        .ayana-container{
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 0.1rem;
+            width: 102.5%;
+            padding-inline: 1rem;
+            margin-top: 1.4rem;
+            position: relative;
+            left: -0.7rem;
+        }
+
+        .itemss{
+            background-color: #fff;
+        }
+
+        .divert{
+            background-color: rgb(55, 52, 52) !important;
+        }
+
+        .common{
+            flex-basis: calc(33% - 0.1rem) !important;    
+            box-shadow: 2px 2px 2px 2px rgb(55, 52, 52);
+            border-top: 3px solid rgb(55, 52, 52);
+            border-left: 3px solid rgb(55, 52, 52);
+            margin-bottom: 1.5rem;
+            padding-top: 0.6rem; 
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .float-end{
+            transition: 0.2s ease-in all;
+        }
+
+        .float-end:hover{
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(1.5); 
+        }
+
+        .hide {
+            display: none;
+            float: right;
+        }
+
+        .myDIV:hover + .hide {
+            display: block;
+            font-weight: 800;
+            color: #008CBA;
+        }
+
+        #containerrr{
+            height: 35vh !important;
+        }
+
+        .navbar{
+            background-color: #00aba9;
+        }
+
+        .crowd-vehicle{
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .crowd-vehicle a{
+            text-decoration: none;
+        }
+
+        #common-id-1, #containerrr{
+            margin-top: -7.2rem;
+        }
+
+        #common-id-1{
+            height: 38vh;
+        }
+
+        #common-id-2{
+            height: 30.89vh !important;
+            margin-top: -2rem;
+        }
+
+        #myChart{
+            height: 20vh !important;
+        }
+
+        #common-id-3{
+            height: 34vh;
+            margin-top: -1rem;
+        }
+
+        #common-id-4, #common-id-5{
+            position: relative;
+            top: -5.7rem;
+        }
+
+        #common-id-5{
+            height: 39vh !important;
+        }
+
+        #common-id-4{
+            height: 39vh !important;
+        }
+
+        #graph-canvas{
+            height: 25vh !important;
+        }
+
+        #chart-3{
+            height: 25vh !important;
+        }
+
+        #chart-4{
+            height: 33vh !important;
+            position: relative;
+            top: -0.8rem;
+        }
+
+        #time, #time1{
+            margin-top: -1rem;
+        }
+
+        #chart-5{
+            height: 33vh !important;
+            position: relative;
+            top: -0.75rem;
+        }
+
+        #date1{
+            position: relative;
+            top: 0.8rem;
+        }
+
+
+        .toolltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toolltip:hover i{
+            text-decoration: underline;
+            color: #00aba9;
+        }
+
+        .tooltipp:hover i{
+            text-decoration: underline;
+            color: yellow !important;
+        } 
+
+        .tooltipp1:hover i{
+            text-decoration: underline;
+            color: chartreuse !important;
+        }
+
+        .toolltip .tooltiptext {
+            visibility: hidden;
+            width: 130px;
+            background-color: black;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 15px;
+            position: absolute;
+            left: -50px;
+            top: 40px;
+            z-index: 1;
+        }
+
+        .toolltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .offcanvas-footer button{
+            padding: 0.5rem 4rem;
+            border-radius: 8px;
+            border: none;
+            background-color: green;
+            color: #fff;
+        }
+  
+        .offcanvas-footer button:hover{
+            background-color: rgb(61, 199, 61);
+            color: red;
+        }
+
+        .offcanvas-body li:hover{
+            background: linear-gradient(67deg, #3db567, #90BA0C );
+            border-radius: 4px;
+        }
+
+        .offcanvas.offcanvas-start{
+            transition: transform 0.6s ease-in-out;
+            transform: translateX(-100%);
+        }
+
+        .offcanvas.offcanvas-start.show{
+            transform: translateX(0);
+        }
+
+        @media only screen and (max-width:780px){
+            body{
+                overflow: scroll !important;
+            }
+        }
+
+
+        @media only screen and (max-width:1400px){
+            #common-id-4, #common-id-5{
+            height: 40vh !important;
+            }
+
+            #common-id-1{
+                height: 39vh !important;
+            }
+
+            #containerrr{
+                height: 36vh !important;
+            }
+
+            #chart-4, #chart-5{
+                margin-top: 1.2rem;
+            }
+        }
+
+        @media only screen and (min-width:1401px){
+            
+            #kt_header{
+                margin-top: 3.44rem !important;
+                width: 102.1%;
+            }
+
+            #containerrr{
+                    height: 37vh !important;
+            }
+
+            .first-graph{
+                margin-top: 1.2rem !important;
+            }
+
+            #common-id-1{
+                height: 40vh !important;
+            }
+        }
+
+
+
+    #dropdownMenuButton{
+        border-radius: 50%;
+        background: none;
+    }
+
+    .btn-secondary{
+        border: none;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+     </style>
+
+    <script>
+        function showAlert() {
+            alert("This site is not live. Please try again after some time.");
+        }
+    </script>
+
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-dark fixed-top my-auto" style="background: linear-gradient(67deg, #00aba9, #00aba9); height: 7%;">
+
+            <div class="container-fluid d-flex flex-row-reverse">
+              <div class="navbar-brand" style="margin-top: -2.5rem;">
+                <div class="dropdown" style="position: relative; top: 2.25rem; left: -7.2rem;">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton">
+                      <span style="font-size: 1.0rem; position: relative; top: -2px;"> Rani Solar</span>
+                      &nbsp;
+                     <i class="fa-solid fa-location-dot text-danger" style="font-size: 1.4rem;"></i>
+                  </button>
+                </div>      
+                
+              <a href="#" class="toolltip" style="text-decoration: none;">
+                <img src="../assets/img/n.png" style="width: 25px;" alt="Notification Icon">
+                <span class="tooltiptext">Notification</span>
+            </a>
+            
+              <a onclick="reloadPage()" class="toolltip tooltipp1">
+                <i class="bi bi-arrow-repeat"></i>
+                <span class="tooltiptext">Refresh</span>
+              </a>
+
+              <a href="https://cmsdev.sterlingandwilson.com/Portfolio/Adv" target="_blank" class="toolltip tooltipp">
+                <i class="fa-solid fa-house toolltip" ></i>
+                <span class="tooltiptext">Home</span>
+              </a>
+
+
+
+
+
+            </div>
+            <div>
+                <button class="navbar-toggler" id="sidebarToggle" style="margin-top: -0.2rem;" type="button" aria-label="Toggle Sidebar">
+                    <span class="navbar-toggler-icon"></span>
+                    &nbsp;
+                </button>
+                <span class=" text-white fs-5" style="font-family: 'Montserrat', sans-serif !important;"> Sterling & Wilson</span>
+            </div>
+            <div id="sidebar" class="offcanvas offcanvas-start text-bg-dark" style="width: 20%;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title d-flex justify-content-end mx-4" id="offcanvasDarkNavbarLabel">
+                    <img src="../assets/media/STERLing & WILson.png" width="100%"/>
+                </h5>
+              </div>
+              <div style="border-bottom: 1px solid green; border-width: 190%; padding-bottom: 1rem;"></div>
+              <div class="offcanvas-body d-flex flex-column justify-content-between py-5">
+                
+                <ul class="navbar-nav" style="margin-top: -2rem;">
+                    <li class="py-2 px-2" id="1" style="display: none;">
+                        <i class="fa-solid fa-circle text-success" style="font-size: 12px;"></i>                        
+                       <a  href="../main/dashboard.html" style="color:#fff; text-decoration: none;"> Rani Solar </a> 
+                    </li>
+                </ul>
+
+                <div class="offcanvas-footer text-center">
+                    <span class="text-danger fw-bold">Solar<strong style="color: #008CBA;">Vision</strong></span>
+                    <p style="font-size: 13.5px;">AI-Driven Surveillance
+                        & Video Analytics Solutions For
+                        Solar Power Plants
+                    </p>
+                    
+                <script>
+                    document.getElementById("logoutButton").addEventListener("click", function(event) {
+                        var isConfirmed = confirm("Are you sure you want to log out?");
+        
+                        if (isConfirmed) {
+                        } else {
+                            event.preventDefault();
+                        }
+                    }
+                    );
+                </script>
+
+                    <div>
+                        <i class="fa-regular fa-copyright"></i>
+                        <span style="font-size: 13px;">2023 powered by</span>
+                        <br />
+                        <a href="https://cmsdev.sterlingandwilson.com/login/?ref=/Portfolio/Adv" target="_blank" class="text-danger fs-6 fw-bold" style="position: relative; top: 8px;">
+                            <img src="../assets/img/STERLing & WILson.png" width="60%"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+      </nav>
+    </header>
+      
+      <div id="kt_header" class="d-flex flex-wrap">
+        <a href="./dashboard.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid blue;">
+            <img src="../assets/media/1a.png" />
+            &nbsp;
+            <div class="text-right">
+                <strong id="total1" class="fs-1 text-right"></strong><br />
+                <span>Employee</span>
+            </div>
+            </div>
+        </a>
+        <a href="./dashboard.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid rgb(4, 158, 4);">
+                <img src="../assets/media/1b.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="lblpresent" class="fs-1"></strong><br />
+                    <span>Present</span>
+                </div>
+            </div>
+        </a>
+        <a href="./dashboard.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid rgb(255, 0, 0);">
+                <img src="../assets/media/absent-cross.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="absentemp" class="fs-1"></strong><br />
+                    <span>Absent</span>
+                </div>
+            </div>
+        </a>
+        <a href="./newFire.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid orange;">
+                <img src="../assets/media/3a.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="fire1" class="fs-1">0</strong><br />
+                    <span>Fire</span>
+                </div>
+            </div>
+        </a>
+        <a href="./newFire.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid yellow;">
+                <img src="../assets/media/3b.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="smoke" class="fs-1">0</strong><br />
+                    <span>Smoke</span>
+                </div>
+            </div>
+        </a>
+        <a href="./newovergrass.html" style="min-width: 14%;">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid rgb(218, 147, 16);">
+                <img src="../assets/media/5.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="vegetation1" class="fs-1" ></strong>
+                    <br />
+                    <span>Grass</span>
+                </div>
+            </div>
+        </a>
+        <a href="./newDection.html" style="min-width: 14%;" id="intrusion">
+            <div class="mx-2 navbar-item" style="border-bottom: 3px solid aquamarine;">
+                <img src="../assets/media/6.png" />
+                &nbsp;
+
+                <div>
+                    <strong id="intrusion1" class="fs-1">0</strong><br />
+                    <span>Intrusion</span>
+                </div>
+            </div>
+        </a>
+      </div>
+
+       
+        <div class="crowd-vehicle">
+            <a href="./newCrowd.html" style="min-width: 16.7%;">
+                <div class="mx-2 navbar-item" style="border-bottom: 3px solid burlywood;">
+                    <img src="../assets/media/4.png" />
+                    &nbsp;
+    
+                    <div>
+                        <strong id="crowd"class="fs-1">0</strong><br />
+                        <span>Crowd</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./newANPR.html" style="min-width: 16.7%;">
+                <div class="mx-2 navbar-item" style="border-bottom: 3px solid rgb(169, 5, 169);">
+                    <img src="../assets/media/Vehicle.png" />
+                    &nbsp;    
+    
+                    <div>
+                        <strong id ="car"class="fs-1" >0</strong><br />
+                        <span>Vehicle</span>
+                    </div>
+                </div>
+            </a> 
+        </div>
+
+      <div class="ayana-container col-md-12 col-lg-12">
+                    
+        <!-- Modal 1st-->
+        <div class="modal fade" id="exampleModal-0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement5">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" >
+                        <div class="common common-cold">
+                            <table class="graph">
+                        
+                        <div>
+                        <canvas id="graph-canvas-1" style="height: 60vh; width: 80vw;"></canvas>
+                        </div>
+                        
+                      
+                        <script>
+                            // Fetch data from your API endpoint
+                            fetch('https://ai-api.sterlingandwilson.com/api/Employee/VenderCountweekly')
+                                .then(response => response.json())
+                                .then(apiData => {
+                                    const columnLabels = []; // Initialize with 'Date' as the first column label
+                                    const dataA = []; // Initialize with 0 for the first column
+                                    const dataB = [];
+                                    const dataC = [];
+                                    const totalValue = apiData.reduce((total, item) => total + parseInt(item.t), 0);
+                    
+                                    apiData.forEach(item => {
+                                        // Parse the date string into a JavaScript Date object
+                                        // const date = item.date.textContent;
+                                        // Format the date in "MonDD" format (e.g., "Feb24")                                    
+                                        columnLabels.push(item.date);
+                                        dataA.push(parseInt(item.a));
+                                        dataB.push(parseInt(item.b));
+                                        dataC.push(parseInt(item.c));
+                                    });
+                    
+                                    const barColors = ['green', 'red', '#00aba9'];
+                    
+                                    new Chart(document.getElementById('graph-canvas-1'), {
+                                        type: 'bar',
+                                        data: {
+                                            labels: columnLabels, // Use column labels as labels
+                                            datasets: [
+                                                {
+                                                    label: 'Sterling & Wilson',
+                                                    data: dataA,
+                                                    backgroundColor: barColors[0],
+                                                    stack: 'Stack 1', // Define a stack for the first dataset
+                                                },
+                                                {
+                                                    label: 'Customer Representative',
+                                                    data: dataB,
+                                                    backgroundColor: barColors[1],
+                                                    stack: 'Stack 1', // Use the same stack for the second dataset
+                                                },
+                                                {
+                                                    label: 'Security',
+                                                    data: dataC,
+                                                    backgroundColor: barColors[2],
+                                                    stack: 'Stack 1', // Use the same stack for the third dataset
+                                                },
+                                            ],
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true,
+                                                    stacked: true,
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Value',
+                                                    },
+                                                },
+                                                x: {
+                                                    stacked: true,
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Column',
+                                                    },
+                                                },
+                                            },
+                                            plugins: {
+                                                legend: {
+                                                    display: false, // Hide the legend
+                                                },
+                                            },
+                                            annotation: {
+                                                annotations: [
+                                                    {
+                                                        type: 'line',
+                                                        mode: 'horizontal',
+                                                        scaleID: 'y',
+                                                        value: totalValue, // Display the total value
+                                                        borderColor: 'rgba(0, 0, 0, 0.5)',
+                                                        borderWidth: 2,
+                                                        label: {
+                                                            content: 'Total: ' + totalValue, // Display the total value at the top
+                                                            enabled: true,
+                                                            position: 'top', // Position it at the top
+                                                        },
+                                                    },
+                                                ],
+                                            },
+                                        },
+                                    });
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data from the API:', error);
+                                });
+                        </script>
+                        
+                        
+                        
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <!-- Modal 2nd -->
+        <div class="modal fade" id="exampleModal-1" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          
+            <style>
+                .modal-title {
+                  font-size: 24px;
+                  font-weight: bold;
+                  color: #0070ac; 
+                }
+      
+            </style>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Get the current date and format it
+                    const currentDate = new Date();
+                    const currentDay = currentDate.getDate();
+
+                    const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+                    const currentYear = currentDate.getFullYear();
+                    const hiddenInput = document.getElementById("hiddenTitle");
+                
+                    hiddenInput.value = `Vehicle Monthly Data Report : ${currentMonth} - ${currentYear}`;
+                    console.log(hiddenInput.value);
+
+                    const label = document.getElementById("labelElement");
+                    const label1 = document.getElementById("labelElement1");
+                    const label2 = document.getElementById("labelElement2");
+                    const label3 = document.getElementById("labelElement3");
+                    const label4 = document.getElementById("labelElement4");
+                    const label5 = document.getElementById("labelElement5");
+
+                    label.textContent = hiddenInput.value;
+                    const time = document.getElementById("time");
+                    const time1 = document.getElementById("time1");
+                    time.textContent=`Date : ${currentDate.toDateString()}`;
+                    time1.textContent=`Date : ${currentDate.toDateString()}`;
+                    label1.textContent = `Fire,Smoke & Vegetation Monthly Data Report : ${currentMonth} - ${currentYear}`;
+                    label2.textContent = `Crowd & Detection Today Data Report : ${currentDay} - ${currentMonth} - ${currentYear}`;
+                    label3.textContent = `Smoke, Fire & Grass Today Data Report : ${currentDay} - ${currentMonth} - ${currentYear}`;
+                    label4.textContent = `Bird, Animal & Person Monthly Data Report : ${currentMonth} - ${currentYear}`;
+                    label5.textContent = `Sterling & Wilson, Customer Representative & Security Staff :  7 Days Attendance Report `;
+
+                });
+                
+            </script>
+
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="common common-cold" >
+                            <canvas id="myChart-1" style="height: 60vh; width: 80vw;"></canvas>
+                            <div class="fw-bold text-center date-text">Date</div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal-2" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement1"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="common common-cold">
+                            <canvas id="myChart-2" style="height: 60vh; width: 80vw;"></canvas>
+                            <div class="fw-bold text-center date-text">Date</div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal-3" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement2"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="width: 30vw; height: 70vh; margin-left: 25rem;">
+                            <div class="d-flex justify-content-center">
+                                <canvas id="myChart-3" style="width: 50vw; height: 100vh;"></canvas>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="modal fade" id="exampleModal-4" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement3"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="width: 30vw; height: 70vh; margin-left: 25rem;">
+                            <canvas id="myChart-4" style="width: 50vw; height: 100vh;"></canvas>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="modal fade" id="exampleModal-5" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelElement4"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center">
+                        <div id="containerr" style="width: 100%; height: 60vh;"></div>    
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="common common-cold itemss item-1" id="common-id-1">
+            <table class="graph">
+                <img src="../assets/media/zoom_icon.png" width="5%" 
+                    class="float-end mx-4 myDIV" data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal-0"
+                />
+                <span class="hide">Zoom In</span>
+                <div class="d-flex justify-content-center" style="margin-top: 2rem;">
+                </div>
+        
+                <div>
+                    <canvas id="graph-canvas"></canvas>
+                    <div class="text-center mt-2 first-graph" style="font-size: 13px;">Date</div>
+
+                </div>
+        
+        
+                <script>
+                    fetch('https://ai-api.sterlingandwilson.com/api/Employee/VenderCountweekly')
+                    .then(response => response.json())
+                    .then(apiData => {
+                        const columnLabels = []; 
+                        const dataA = []; 
+                        const dataB = [];
+                        const dataC = [];
+                        const totalValues = []; 
+
+                        apiData.forEach(item => {
+                            columnLabels.push(item.date);
+                            dataA.push(parseInt(item.a));
+                            dataB.push(parseInt(item.b));
+                            dataC.push(parseInt(item.c));
+
+                            totalValues.push(parseInt(item.a) + parseInt(item.b) + parseInt(item.c));
+                        });
+
+                        const totalValue = apiData.reduce((total, item) => total + parseInt(item.t), 0);
+
+                        const barColors = ['green', 'red', '#00aba9'];
+
+                        new Chart(document.getElementById('graph-canvas'), {
+                            type: 'bar',
+                            data: {
+                                labels: columnLabels, 
+                                datasets: [
+                                    {
+                                        label: 'Sterling&Wilson',
+                                        data: dataA,
+                                        backgroundColor: barColors[0],
+                                        stack: 'Stack 1',
+                                    },
+                                    {
+                                        label: 'Customer Represent',
+                                        data: dataB,
+                                        backgroundColor: barColors[1],
+                                        stack: 'Stack 1',
+                                    },
+                                    {
+                                        label: 'Security',
+                                        data: dataC,
+                                        backgroundColor: barColors[2],
+                                        stack: 'Stack 1',
+                                    },
+                                ],
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        stacked: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Value',
+                                        },
+                                    },
+                                    x: {
+                                        stacked: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Column',
+                                        },
+                                    },
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                    },
+                                    datalabels: {
+                                        color: 'white', 
+                                        display: true,
+                                        align: 'center', 
+                                        anchor: 'center',
+                                        formatter: function(value, context) {
+                                            if (context.datasetIndex === 0) {
+                                                return 'Sterling & Wilson: ' + value;
+                                            } else if (context.datasetIndex === 1) {
+                                                return 'Customer Representative: ' + value;
+                                            } else if (context.datasetIndex === 2) {
+                                                return 'Security: ' + value;
+                                            }
+                                        },
+                                    },
+                                },
+                                annotation: {
+                                    annotations: [
+                                        {
+                                            type: 'line',
+                                            mode: 'horizontal',
+                                            scaleID: 'y',
+                                            value: totalValue,
+                                            borderColor: 'rgba(0, 0, 0, 0.5)',
+                                            borderWidth: 2,
+                                            label: {
+                                                content: 'Total: ' + totalValue,
+                                                enabled: true,
+                                                position: 'top',
+                                            },
+                                        },
+                                    ],
+                                },
+                                tooltips: {
+                                    mode: 'index', 
+                                    intersect: false,
+                                },
+                                legend:{
+                                    labels:{
+                                    }
+                                }
+                            },
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data from the API:', error);
+                    });
+                </script>
+            </table>
+        </div>
+
+        <div class="common common-cold itemss item-4" id="common-id-3">
+            <img src="../assets/media/zoom_icon.png" width="5%" class="float-end mx-4 myDIV" 
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModal-2"
+            />
+            <span class="hide">Zoom In</span>
+            <canvas id="chart-3"></canvas>
+            <div class="text-center" style="font-size: 13px;">Date</div>
+        </div>
+
+        <div id="containerrr" class="common barr itemss item-5">
+          <img src="../assets/media/zoom_icon.png" width="5%" 
+               class="float-end mx-4 myDIV"
+               data-bs-toggle="modal" 
+               data-bs-target="#exampleModal-5"
+               style="position: relative; left: 0px; z-index: 10000;"
+               />
+          <span class="hide">Zoom In</span>
+        </div>
+
+        <div class="common itemss item-6" id="common-id-4">
+            <img src="../assets/media/zoom_icon.png" width="5%" 
+                 class="float-end mx-4 myDIV" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#exampleModal-3"
+                 
+            />  
+            <span class="hide">Zoom In</span>
+            <canvas id="chart-4" style="max-width:470px; max-height: 270px;"></canvas>
+            <div id="time" class="text-center" style="font-size: 13px;">Date</div>
+
+        </div>
+
+        <div class="common common-cold itemss item-7" id="common-id-2">
+          <img src="../assets/media/zoom_icon.png" width="5%" class="float-end mx-4 myDIV" 
+               data-bs-toggle="modal" 
+               data-bs-target="#exampleModal-1"
+          />
+          <span class="hide">Zoom In</span>
+          <canvas id="myChart"></canvas>
+          <div id="date1"  class="text-center" style="font-size: 13px;">Date</div>
+
+        </div>
+        
+        <div class="common itemss item-8" id="common-id-5">
+            <img src="../assets/media/zoom_icon.png" width="5%" 
+                 class="float-end mx-4 myDIV" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#exampleModal-4"
+            />
+            <span class="hide">Zoom In</span>
+            <canvas id="chart-5" style="max-width:470px; max-height: 270px;"></canvas>
+            <div id="time1" class="text-center" style="font-size: 13px;">Date</div>
+        </div>
+
+      </div>
+
+
+
+    <!-- 2nd Graph -->
+    <script>
+        const xValues = [0];
+        const yValues = [0];
+
+  
+    $.ajax({
+        url: 'https://ai-api.sterlingandwilson.com/api/Fire/VehicleData',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            yValues.push(...data.map(item => parseInt(item.vehicleCount || 0))); // Extract and parse vehicleCount values
+
+            const maxX = yValues.length - 1;
+            xValues.push(...Array.from({ length: maxX }, (_, index) => index + 1));
+
+            createChart("myChart", xValues, yValues);
+            createChart("myChart-1", xValues, yValues);
+        },
+        error: function (error) {
+            console.error('Error fetching data:', error);
+
+            createChart("myChart", xValues, yValues);
+            createChart("myChart1", xValues, yValues);
+        }
+    });
+
+    function createChart(chartId, xValues, yValues) {
+        new Chart(chartId, {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: 'Vehicle Analytics',
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "#AF2A09",
+                    fontFamily: "sans-serif",
+                    fontWeight: "bold",
+                    borderColor: "rgba(0,0,0,0.1)",
+                    data: yValues,  
+                }]
+            },
+            options: {
+                legend: { 
+
+                    labels: {
+                        fontSize: 14,
+                    },
+                },
+                scales: {
+                    yAxes: [{ ticks: { min: 1 } }] 
+                }
+            }
+        });
+    }
+    </script>
+  
+
+    <!-- 3rd Graph -->
+    <script>
+
+        async function fetchData() {
+            try {
+                const response = await fetch('https://ai-api.sterlingandwilson.com/api/Fire/NatureData');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return null;
+            }
+        }
+    
+        async function updateChart(chart) {
+            const data = await fetchData();
+    
+            if (data) {
+                const fireData = data.map(item => parseInt(item.fireRecord) || 0);
+                const smokeData = data.map(item => parseInt(item.smokeRecord) || 0);
+                const vegetationData = data.map(item => parseInt(item.overgrassRecord) || 0);
+                fireData.unshift(0);
+                smokeData.unshift(0);
+                vegetationData.unshift(0);
+                const chartData = {
+                    labels: Array.from({ length: data.length + 1 }, (_, i) => '' + i),
+
+                    datasets: [
+                        {
+                            label: 'Fire',
+                            data: fireData,
+                            backgroundColor: 'red',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Smoke',
+                            data: smokeData,
+                            backgroundColor: 'rgb(150,150,150)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Vegetation',
+                            data: vegetationData,
+                            backgroundColor: 'rgba(0, 255, 0, 1.0)',
+                            borderWidth: 1,
+                            color: '',
+                        }
+                    ]
+                };
+    
+                chart.data = chartData;
+                chart.update();
+            }
+        }
+    
+        const initialDataChart3 = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Fire',
+                    data: [],
+                    backgroundColor: 'red',
+                    borderWidth: 1,
+                    color: ''
+                },
+                {
+                    label: 'Smoke',
+                    data: [],
+                    backgroundColor: 'rgb(150,150,150)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Vegetation',
+                    data: [],
+                    backgroundColor: 'rgba(0,255,0,1.0)',
+                    borderWidth: 1
+                }
+            ]
+        };
+    
+        const options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            options:{
+                legend:{
+                    labels:{
+                        fontColor:'white'
+                    }
+                }
+            }
+        };
+    
+        const ctxChart3 = document.getElementById('chart-3').getContext('2d');
+        const chart3 = new Chart(ctxChart3, {
+            type: 'bar',
+            data: initialDataChart3,
+            options:{
+        legend:{
+            labels:{
+            }
+        }
+    }
+        });
+    
+        const initialDataMyChart2 = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Fire',
+                    data: [],
+                    backgroundColor: 'red',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Smoke',
+                    data: [],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Vegetation',
+                    data: [],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        };
+    
+        const ctxMyChart2 = document.getElementById('myChart-2').getContext('2d');
+        const myChart2 = new Chart(ctxMyChart2, {
+            type: 'bar',
+            data: initialDataMyChart2,
+            options: options
+        });
+    
+        updateChart(chart3);
+        updateChart(myChart2);
+    </script>
+  
+
+    <!-- 4th Graph -->
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+        
+        var currentDate = dd + '/' + mm + '/' + yyyy;
+        var apiUrl = 'https://ai-api.sterlingandwilson.com/api/DashboardSelectedOnDate/NewSiteModuleCount?todaydate=' + currentDate;
+        
+        $.ajax({
+            url: apiUrl,
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+            var [{ crowd_record, detection_data }] = response;
+        
+            if (crowd_record === 0 && detection_data === 0) {
+                var chart = new Chart("chart-4", {
+                type: "doughnut",
+                data: {
+                    labels: ["Crowd Record", "Intrusion Record","No Value"],
+                    datasets: [{
+                    backgroundColor: ["#00aba9", "#b91d47","rgba(0,0,0,0.1)"],
+                    data: [crowd_record, detection_data,100] // 100% to fill the doughnut
+                    }]
+                },
+                options: {
+                    title: {
+                    display: true,
+                    text: ""
+                    }
+                }
+                });
+                var chart = new Chart("myChart-3", {
+                type: "doughnut",
+                data: {
+                    labels: ["Crowd Record", "Intrusion Record","No Value"],
+                    datasets: [{
+                    backgroundColor: ["#00aba9", "#b91d47","grey"],
+                    data: [crowd_record,detection_data,100] 
+                    }]
+                },
+                options: {
+                    title: {
+                    display: true,
+                    text: "No Data Available"
+                    },
+                    
+                }
+                });
+            } else {
+                var chart = new Chart("chart-4", {
+                type: "doughnut",
+                data: {
+                    labels: ["Crowd Record", "Intrusion Record"],
+                    datasets: [{
+                    backgroundColor: ["#00aba9", "#b91d47"],
+                    data: [crowd_record, detection_data]
+                    }]
+                },
+                options: {
+                    title: {
+                    display: true,
+                    text: ""
+                    },
+                    legend:{
+                    labels:{
+                    },
+                }
+                }
+                });
+                var chart = new Chart("myChart-3", {
+                type: "doughnut",
+                data: {
+                    labels: ["Crowd Record", "Intrusion Record"],
+                    datasets: [{
+                    backgroundColor: ["#00aba9", "#b91d47"],
+                    data: [crowd_record, detection_data]
+                    }]
+                },
+                options: {
+                    title: {
+                    display: true,
+                    text: "Chart Showing Interference"
+                    }
+                }
+                });
+            }
+        
+            chart.update();
+            },
+            error: function(error) {
+            }
+        });
+        
+    </script>
+
+    <script>
+        var URL = 'https://ai-api.sterlingandwilson.com/api/Employee/GetUserInfoData';
+        $.ajax({
+            type: "GET",
+            url: URL,
+            contentType: "application/json",
+            dataType: "json",
+            success: function (Data) {
+                $("#total1").text(Data.length);
+            
+            },
+            "error": function (data) {
+
+            }
+        });
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+        var currentDate = dd + '/' + mm + '/' + yyyy;
+        var apiUrl = 'https://ai-api.sterlingandwilson.com/api/DashboardSelectedOnDate/NewSiteModuleCount?todaydate=' + currentDate;
+
+        $.ajax({
+            url: apiUrl,
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                var lpr = response[0].lpr;
+
+                var fireRecord = response[0].fire_record;
+                var smokeRecord = response[0].smoke_record;
+                var crowdRecord = response[0].crowd_record;
+                var overgrassRecord = response[0].overgrass_record;
+                var detectionData = response[0].detection_data;
+                var moduleDefectRecord = response[0].moduleDefect_record;
+
+                $("#car").text(lpr);
+                $("#fire1").text(fireRecord);
+                $("#smoke").text(smokeRecord);
+                $("#crowd").text(crowdRecord);
+                $("#vegetation1").text(overgrassRecord);
+                $("#intrusion1").text(detectionData);
+                $("#defect").text(moduleDefectRecord);
+                
+            },
+            error: function(error) {
+            }
+        });
+   
+    </script>
+
+   <!-- 5th Graph -->
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+    
+        var currentDate = dd + '/' + mm + '/' + yyyy;
+        var apiUrl = 'https://ai-api.sterlingandwilson.com/api/DashboardSelectedOnDate/NewSiteModuleCount?todaydate=' + currentDate;
+    
+        $.ajax({
+        url: apiUrl,
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            var [{ smoke_record, fire_record, overgrass_record }] = response;
+    
+            if (smoke_record === 0 && fire_record === 0 && overgrass_record === 0) {
+            var xValuess = ["Fire", "Smoke", "Grass","No value"];
+            var yValuess = [fire_record,smoke_record,  overgrass_record,100];
+            var barColors = ["red", "rgb(150,150,150)",  "rgba(0,255,0,1.0)","rgba(0,0,0,0.1)"];
+            
+    
+            new Chart("chart-5", {
+                type: "doughnut",
+                data: {
+                labels: xValuess,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValuess
+                }]
+                }
+            });
+            
+            } else {
+            var xValuess = ["Fire", "Smoke", "Grass"];
+            var yValuess = [fire_record,smoke_record,  overgrass_record];
+            var barColors = ["red", "rgb(150,150,150)",  "rgba(0,255,0,1.0)"];
+    
+            new Chart("chart-5", {
+                type: "doughnut",
+                data: {
+                labels: xValuess,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValuess
+                }]
+                },
+                options: {
+                title: {
+                    display: true,
+                    text: ""
+                },
+                legend:{
+                labels:{
+                },
+            }
+                }
+            });
+            
+            }
+        },
+        error: function(error) {
+        }
+        });
+    </script>
+    
+
+  <!-- 6th Graph -->
+    <script>
+        anychart.onDocumentReady(function () {
+            var dataSet = [[0, 0, 0, 0]];
+            var chart = anychart.area();
+
+            var budgetData = anychart.data.set(dataSet);
+        
+            var seriesData_0 = budgetData.mapAs({ x: 0, value: 0 });
+            var seriesData_1 = budgetData.mapAs({ x: 0, value: 1});
+            var seriesData_2 = budgetData.mapAs({ x: 0, value: 2 });
+            var seriesData_3 = budgetData.mapAs({ x: 0, value: 3 });
+        
+            var series0 = chart.area(seriesData_0);
+            var series1 = chart.area(seriesData_1);
+            var series2 = chart.area(seriesData_2);
+            var series3 = chart.area(seriesData_3);
+        
+            series0.name("Serial No");
+            series1.name("Bird");
+            series2.name("Animal");
+            series3.name("Person");
+        
+            chart.title("");
+        
+            chart.xScale().mode('continuous');
+        
+            var crosshair = chart.crosshair();
+            crosshair.enabled(true)
+                .yStroke(null)
+                .xStroke('#fff');
+            crosshair.yLabel().enabled(false);
+        
+            series0.fill("#ffffff", 0.7)
+                .stroke("#ffffff", 1);
+            series1.fill("#00ffff", 0.7)
+                .stroke("#00ffff", 1);
+            series2.fill("#0000ff", 0.7)
+                .stroke("#0000ff", 1);
+            series3.fill("#DEC081", 0.7)
+                .stroke("#DEC081", 1);
+        
+            chart.legend(true);
+
+        
+            chart.xAxis().title("Date");
+            chart.yAxis().title("Interference of Parasites");
+        
+            function fetchDataAndUpdateChart() {
+                $.ajax({
+                    url: 'https://ai-api.sterlingandwilson.com/api/Fire/InterferenceData',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        dataSet = [[0, 0, 0, 0]].concat(data.map(function (item, index) {
+                return [index + 1, item.animalCount, item.birdCount, item.personCount];
+            }));
+        
+        
+                        budgetData.data(dataSet);
+                        chart.container("containerr");
+                        
+
+                        chart.draw();
+                    },
+                    error: function (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+            }
+        
+            fetchDataAndUpdateChart();
+
+        }); 
+            
+    </script>
+
+
+<!-- 1st MODAL Graph -->
+  <script>
+  fetch('https://ai-api.sterlingandwilson.com/api/Employee/VenderCountWeekly')
+      .then(response => response.json())
+      .then(apiData => {
+          const columnLabels = []; 
+          const dataA = []; 
+          const dataB = [];
+          const dataC = [];
+          const totalValues = []; 
+
+          apiData.forEach(item => {
+              columnLabels.push(item.date);
+              dataA.push(parseInt(item.a));
+              dataB.push(parseInt(item.b));
+              dataC.push(parseInt(item.c));
+
+              totalValues.push(parseInt(item.a) + parseInt(item.b) + parseInt(item.c));
+          });
+
+          const totalValue = apiData.reduce((total, item) => total + parseInt(item.t), 0);
+
+          const barColors = ['green', 'red', '#00aba9'];
+
+          new Chart(document.getElementById('graph-canvas-1'), {
+              type: 'bar',
+              data: {
+                  labels: columnLabels, 
+                  datasets: [
+                      {
+                          label: 'Sterling & Wilson',
+                          data: dataA,
+                          backgroundColor: barColors[0],
+                          stack: 'Stack 1', 
+                      },
+                      {
+                          label: 'Customer Representative',
+                          data: dataB,
+                          backgroundColor: barColors[1],
+                          stack: 'Stack 1', 
+                      },
+                      {
+                          label: 'Security',
+                          data: dataC,
+                          backgroundColor: barColors[2],
+                          stack: 'Stack 1', 
+                      },
+                  ],
+              },
+              options: {
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          stacked: true,
+                          title: {
+                              display: true,
+                              text: 'Value',
+                          },
+                      },
+                      x: {
+                          stacked: true,
+                          title: {
+                              display: true,
+                              text: 'Column',
+                          },
+                      },
+                  },
+                  plugins: {
+                      legend: {
+                          display: false, 
+                      },
+                      datalabels: {
+                          color: 'white',
+                          display: true,
+                          align: 'top',
+                          formatter: function(value, context) {
+                              if (context.datasetIndex === 0) {
+                                  return 'Sterling & Wilson: ' + value;
+                              } else if (context.datasetIndex === 1) {
+                                  return 'Customer Representative: ' + value;
+                              } else if (context.datasetIndex === 2) {
+                                  return 'Security: ' + value;
+                              }
+                          },
+                      },
+                  },
+                  annotation: {
+                      annotations: [
+                          {
+                              type: 'line',
+                              mode: 'horizontal',
+                              scaleID: 'y',
+                              value: totalValue, 
+                              borderColor: 'rgba(0, 0, 0, 0.5)',
+                              borderWidth: 2,
+                              label: {
+                                  content: 'Total: ' + totalValue, 
+                                  enabled: true,
+                                  position: 'top', 
+                              },
+                          },
+                      ],
+                  },
+                  tooltips: {
+                      mode: 'index', 
+                      intersect: false,
+                  },
+              },
+          });
+      })
+      .catch(error => {
+          console.error('Error fetching data from the API:', error);
+      });
+  </script>
+      
+<!-- 3rd MODAL Graph -->
+  <script>
+    anychart.onDocumentReady(function () {
+    var dataSet = [[0, 0, 0, 0]];
+
+    var chart = anychart.area();
+
+    var budgetData = anychart.data.set(dataSet);
+
+
+    var seriesData_0 = budgetData.mapAs({ x: 0, value: 0 });
+    var seriesData_1 = budgetData.mapAs({ x: 0, value: 1});
+    var seriesData_2 = budgetData.mapAs({ x: 0, value: 2 });
+    var seriesData_3 = budgetData.mapAs({ x: 0, value: 3 });
+
+    var series0 = chart.area(seriesData_0);
+    var series1 = chart.area(seriesData_1);
+    var series2 = chart.area(seriesData_2);
+    var series3 = chart.area(seriesData_3);
+
+    series0.name("Serial");
+    series1.name("Bird");
+    series2.name("Animal");
+    series3.name("Person");
+
+    series1.name("Bird").labels().fontColor("red");
+
+    chart.title("");
+
+    chart.xScale().mode('continuous');
+
+    var crosshair = chart.crosshair();
+    crosshair.enabled(true)
+      .yStroke(null)
+      .xStroke('#fff');
+    crosshair.yLabel().enabled(false);
+
+    series0.fill("#ffffff", 0.7)
+        .stroke("#ffffff", 1);
+    series1.fill("#DEC081", 0.7)
+        .stroke("#DEC081", 1);
+    series2.fill("#0000ff", 0.7)
+        .stroke("#0000ff", 1);
+    series3.fill("#00ffff", 0.7)
+        .stroke("#00ffff", 1);
+
+    chart.legend(true);
+
+    chart.xAxis().title("Date");
+    chart.yAxis().title("Interference");
+
+    function fetchDataAndUpdateChart() {
+        $.ajax({
+          url: 'https://ai-api.sterlingandwilson.com/api/Fire/InterferenceData',
+          method: 'GET',
+          dataType: 'json',
+          success: function (data) {
+            dataSet = [[0, 0, 0, 0]].concat(data.map(function (item, index) {
+                return [index + 1, item.animalCount, item.birdCount, item.personCount]; // Remove parseFloat
+            }));
+
+
+        budgetData.data(dataSet);
+        chart.container("containerrr");
+        chart.draw();
+          },
+          error: function (error) {
+              console.error('Error fetching data:', error);
+          }
+      });
+  }
+
+  fetchDataAndUpdateChart();
+});
+
+  </script>
+
+<!-- 5th MODAL Graph -->
+  <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+
+    var currentDate = dd + '/' + mm + '/' + yyyy;
+    var apiUrl = 'https://ai-api.sterlingandwilson.com/api/DashboardSelectedOnDate/NewSiteModuleCount?todaydate=' + currentDate;
+
+    $.ajax({
+        url: apiUrl,
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+        var [{ smoke_record, fire_record, overgrass_record }] = response;
+
+        if (smoke_record === 0 && fire_record === 0 && overgrass_record === 0) {
+            var xValuess = ["Smoke", "Fire", "Grass","No Value"];
+            var yValuess = [smoke_record, fire_record, overgrass_record,100];
+            var barColors = [ "rgb(150,150,150)", "red", "rgba(0,255,0,1.0)","rgba(0,0,0,0.1)"];
+            
+
+        
+            new Chart("myChart-4", {
+            type: "doughnut",
+            data: {
+                labels: xValuess,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValuess
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: "Escalation on Matrix"
+                }
+            }
+            });
+        } else {
+            var xValuess = [ "Smoke", "Fire", "Grass"];
+            var yValuess = [smoke_record, fire_record, overgrass_record];
+
+            var barColors = ["rgb(150,150,150)", "red", "rgba(0,255,0,1.0)"];
+
+            new Chart("myChart-4", {
+            type: "doughnut",
+            data: {
+                labels: xValuess,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValuess
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: "Escalation on Matrix"
+                }
+            }
+            });
+            
+        }
+        },
+        error: function(error) {
+        }
+    });
+  </script>
+
+
+<!-- 6th MODAL Graph -->
+  <input type="hidden" id="hiddenTitle" name="hiddenTitle">
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var sidebar = document.getElementById("sidebar");
+    var sidebarToggle = document.getElementById("sidebarToggle");
+  
+    sidebarToggle.addEventListener("mouseover", function () {
+      sidebar.classList.add("show");
+    });
+  
+    sidebar.addEventListener("mouseleave", function () {
+      sidebar.classList.remove("show");
+    });
+  });
+
+
+var URL = 'https://ai-api.sterlingandwilson.com/api/Employee/GetReportRecog';
+$.ajax({
+    type: "GET",
+    url: URL,
+    contentType: "application/json",
+    dataType: "json",
+    success: function (Data) {
+
+        var resarray = [];
+
+        Data.forEach(function (item) {
+            var i = resarray.findIndex(x => x.UserID == item.userID)
+            if (i <= -1) {
+                resarray.push({ UserID: item.userID, Time: item.recDateTime.substring(10, 19) });
+            }
+        }
+        )
+
+        var count = resarray.length;
+
+        let latecommers = 0;
+        resarray.forEach(function (item) {
+            var pieces = item.Time.split(':')
+            var hour, minute, second;
+            let strinint;
+            if (pieces.length === 3) {
+                hour = parseInt(pieces[0], 10);
+                minute = parseInt(pieces[1], 10);
+                second = parseInt(pieces[2], 10);
+            }
+            if (hour === 10) {
+                if (minute > 30) {
+                    latecommers++;
+                }
+            }
+            else if (hour > 10)
+                latecommers++;
+        });
+
+        $("#lblpresent").text(count);
+        let total = $("#total1").text();
+        let lblpresent = $("#lblpresent").text();
+        let absent = total - lblpresent;
+        $("#absentemp").text(absent);
+    },
+    "error": function (data) {
+
+    }
+});
+
+  </script>
+
+  <script>
+    function showAlertAndRedirect(errorMessage) {
+        alert(errorMessage);
+        window.location.href = 'https://cmsdev.sterlingandwilson.com/login/?ref=/Portfolio/Adv';
+    }
+
+    function simpleDecrypt(encryptedText, key) {
+        var keyBytes = key.split('').map(char => char.charCodeAt(0));
+
+        try {
+            var encryptedBytes = atob(encryptedText).split('').map(char => char.charCodeAt(0));
+
+            for (var i = 0; i < encryptedBytes.length; i++) {
+                encryptedBytes[i] = encryptedBytes[i] ^ keyBytes[i % keyBytes.length];
+            }
+
+            return String.fromCharCode.apply(null, encryptedBytes);
+        } catch (error) {
+            console.error('Error during decryption:', error);
+            return null;
+        }
+    }
+
+    var queryString = window.location.search.substr(1);
+    var params = new URLSearchParams(queryString);
+
+    if (params.has('data')) {
+        var encryptedData = params.get('data');
+        var key = "Cairo"; 
+
+        var decryptedData = simpleDecrypt(encryptedData, key);
+
+        if (!decryptedData) {
+            var errorMessage = "You don't have permission to access. Redirecting to homePage.";
+            showAlertAndRedirect(errorMessage);
+        } else {
+            var decryptedPlantIds = decryptedData;
+
+
+            var searchValues = ['1', '2', '3']; 
+            var matchFound = false;
+
+            for (var i = 0; i < searchValues.length; i++) {
+                var searchValue = searchValues[i];
+
+                if (decryptedPlantIds.includes(searchValue)) {
+                    matchFound = true;
+                    sessionStorage.clear();
+                    sessionStorage.setItem("fullURL", window.location.href);
+                    console.log(sessionStorage.getItem("fullURL"));
+
+                    sessionStorage.setItem("AuthenticationState", "Authenticated");
+                    // If the current search value is present, show the corresponding <li> element
+                    console.log('Element with id ' + searchValue + ' should be displayed.');
+                    document.getElementById(searchValue).style.display = 'block';
+                    console.log('Decrypted Data: Done');
+                    break; // Break out of the loop since a match is found
+                }
+            }
+
+            if (!matchFound) {
+                var errorMessage = "You don't have permission to access. Redirecting to homePage.";
+                showAlertAndRedirect(errorMessage);
+            }
+        }
+    } else {
+        var errorMessage = "Error: Data parameter is missing. Redirecting to homePage.";
+        showAlertAndRedirect(errorMessage);
+    }
+
+  </script>
+
+  <script>
+        function reloadPage() {
+            location.reload(true); 
+        }
+  </script>
+
+</body>
+</html>

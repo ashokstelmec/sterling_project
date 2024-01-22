@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function getSessionId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('sessionId');
+        }
+
+        function fetchTokenAndPlantDetails() {
+            const sessionId = getSessionId();
+            
+            fetch(`http://localhost:50700/api/Employee/GetTokenBySessionId?sessionId=${sessionId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                const jwtToken = data.token;
+                const plantDetails = data.plantDetails;
+
+                // Store token and plant details in session
+                sessionStorage.setItem('jwtToken', jwtToken);
+                sessionStorage.setItem('plantDetails', JSON.stringify(plantDetails));
+
+                // Redirect to new_v3.html
+                window.location.href = 'https://ai-app.sterlingandwilson.com/main/new_v3.html';
+            })
+            .catch(error => {
+                console.error('Error fetching token:', error);
+            });
+        }
+
+        // Call the function to fetch the token and plant details
+        fetchTokenAndPlantDetails();
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="https://ai-app.sterlingandwilson.com/main/new_v3.html">click here</a>.</p>
+</body>
+</html>
